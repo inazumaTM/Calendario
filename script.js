@@ -247,37 +247,37 @@ function timeATT(){
     if(currentToday.getDate() < 10 && currentToday.getMonth()+1 < 10){
         timeDay.textContent = `0${currentToday.getDate()}/0${currentToday.getMonth()+1}/${currentToday.getFullYear()}`
     }
-    else if(currentToday.getDate() > 10 && currentToday.getMonth()+1 <10){
+    else if(currentToday.getDate() >= 10 && currentToday.getMonth()+1 <10){
         timeDay.textContent = `${currentToday.getDate()}/0${currentToday.getMonth()+1}/${currentToday.getFullYear()}`
     }
-    else if(currentToday.getDate() < 10 && currentToday.getMonth()+1 > 10){
+    else if(currentToday.getDate() < 10 && currentToday.getMonth()+1 >= 10){
         timeDay.textContent = `0${currentToday.getDate()}/${currentToday.getMonth()+1}/${currentToday.getFullYear()}`
     }
-    else if(currentToday.getDate() > 10 && currentToday.getMonth()+1 > 10){
+    else if(currentToday.getDate() >= 10 && currentToday.getMonth()+1 >= 10){
         timeDay.textContent = `${currentToday.getDate()}/${currentToday.getMonth()+1}/${currentToday.getFullYear()}`
     }
     if(currentToday.getHours() < 10 && currentToday.getMinutes() < 10 && currentToday.getSeconds() < 10){
         timeHour.textContent = `0${currentToday.getHours()}:0${currentToday.getMinutes()}:0${currentToday.getSeconds()}`
       } 
-      else if(currentToday.getHours() < 10 && currentToday.getMinutes() < 10 && currentToday.getSeconds() > 10){
+      else if(currentToday.getHours() < 10 && currentToday.getMinutes() < 10 && currentToday.getSeconds() >= 10){
         timeHour.textContent = `0${currentToday.getHours()}:0${currentToday.getMinutes()}:${currentToday.getSeconds()}`
       }
-      else if(currentToday.getHours() < 10 && currentToday.getMinutes() > 10 && currentToday.getSeconds() < 10){
+      else if(currentToday.getHours() < 10 && currentToday.getMinutes() >= 10 && currentToday.getSeconds() < 10){
         timeHour.textContent = `0${currentToday.getHours()}:${currentToday.getMinutes()}:0${currentToday.getSeconds()}`
       }
-      else if(currentToday.getHours() < 10 && currentToday.getMinutes() > 10 && currentToday.getSeconds() > 10){
+      else if(currentToday.getHours() < 10 && currentToday.getMinutes() >= 10 && currentToday.getSeconds() >= 10){
         timeHour.textContent = `0${currentToday.getHours()}:${currentToday.getMinutes()}:${currentToday.getSeconds()}`
       }
-      else if(currentToday.getHours() > 10 && currentToday.getMinutes() < 10 && currentToday.getSeconds() < 10){
+      else if(currentToday.getHours() >= 10 && currentToday.getMinutes() < 10 && currentToday.getSeconds() < 10){
         timeHour.textContent = `${currentToday.getHours()}:0${currentToday.getMinutes()}:0${currentToday.getSeconds()}`
       }
-      else if(currentToday.getHours() > 10 && currentToday.getMinutes() < 10 && currentToday.getSeconds() > 10){
+      else if(currentToday.getHours() >= 10 && currentToday.getMinutes() < 10 && currentToday.getSeconds() >= 10){
         timeHour.textContent = `${currentToday.getHours()}:0${currentToday.getMinutes()}:${currentToday.getSeconds()}`
       }
-      else if(currentToday.getHours() > 10 && currentToday.getMinutes() > 10 && currentToday.getSeconds() < 10){
+      else if(currentToday.getHours() >= 10 && currentToday.getMinutes() >= 10 && currentToday.getSeconds() < 10){
         timeHour.textContent = `${currentToday.getHours()}:${currentToday.getMinutes()}:0${currentToday.getSeconds()}`
       }
-      else if(currentToday.getHours() > 10 && currentToday.getMinutes() > 10 && currentToday.getSeconds() > 10){
+      else if(currentToday.getHours() >= 10 && currentToday.getMinutes() >= 10 && currentToday.getSeconds() >= 10){
         timeHour.textContent = `${currentToday.getHours()}:${currentToday.getMinutes()}:${currentToday.getSeconds()}`
       }
 }
