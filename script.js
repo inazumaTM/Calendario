@@ -1,66 +1,72 @@
+const calendar = document.querySelector('.calendar')
+const asideTime = document.querySelector('.asideTime')
 const month = document.querySelector('.month')
 const year = document.querySelector('.year')
 const days = document.querySelector('.days')
+const today = new Date()
+const currentDay = today.getDate()
+const currentMonth = today.getMonth()
+const currentYear = new Date().getFullYear()
+const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+const timeDay = document.querySelector('.time span:nth-child(1)')
+const timeHour = document.querySelector('.time span:nth-child(2)')
 
 function currentDate() {
-    const currentYear = new Date().getFullYear()
     let currentMonthNumber = new Date().getMonth()
-    const today = new Date()
-    const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
     let dayOfWeek = monthStart.getDay();
-    let currentMonth = ''
+    let stringMonth = ''
     currentMonthNumber++
     dayOfWeek++
     year.textContent = currentYear
     
     switch(currentMonthNumber){
         case 1:
-            currentMonth = 'Janeiro'
-            month.textContent = currentMonth
+            stringMonth = 'Janeiro'
+            month.textContent = stringMonth
         break
         case 2:
-            currentMonth = 'Fevereiro'
-            month.textContent = currentMonth
+            stringMonth = 'Fevereiro'
+            month.textContent = stringMonth
         break
         case 3:
-            currentMonth = 'Março'
-            month.textContent = currentMonth
+            stringMonth = 'Março'
+            month.textContent = stringMonth
         break
         case 4:
-            currentMonth = 'Abril'
-            month.textContent = currentMonth
+            stringMonth = 'Abril'
+            month.textContent = stringMonth
         break
         case 5:
-            currentMonth = 'Maio'
-            month.textContent = currentMonth
+            stringMonth = 'Maio'
+            month.textContent = stringMonth
         break
         case 6:
-            currentMonth = 'Junho'
-            month.textContent = currentMonth
+            stringMonth = 'Junho'
+            month.textContent = stringMonth
         break
         case 7:
-            currentMonth = 'Julho'
-            month.textContent = currentMonth
+            stringMonth = 'Julho'
+            month.textContent = stringMonth
         break
         case 8:
-            currentMonth = 'Agosto'
-            month.textContent = currentMonth
+            stringMonth = 'Agosto'
+            month.textContent = stringMonth
         break
         case 9:
-            currentMonth = 'Setembro'
-            month.textContent = currentMonth
+            stringMonth = 'Setembro'
+            month.textContent = stringMonth
         break
         case 10:
-            currentMonth = 'Outubro'
-            month.textContent = currentMonth
+            stringMonth = 'Outubro'
+            month.textContent = stringMonth
         break
         case 11:
-            currentMonth = 'Novembro'
-            month.textContent = currentMonth
+            stringMonth = 'Novembro'
+            month.textContent = stringMonth
         break
         case 12:
-            currentMonth = 'Dezembro'
-            month.textContent = currentMonth
+            stringMonth = 'Dezembro'
+            month.textContent = stringMonth
         break
     }
     switch(currentMonthNumber){
@@ -226,7 +232,7 @@ function currentDate() {
                 }
             }
     }
-    todayFunction(today.getDate())
+    todayFunction(currentDay)
 }
 function ehBissexto(ano) {
     return (ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0;
@@ -235,4 +241,47 @@ function ehBissexto(ano) {
     let todayNumber = document.querySelector(`.n${day}`)
     todayNumber.classList.add('today')
   }
+function timeATT(){
+    let currentToday = new Date()
+    todayFunction(currentToday.getDate())
+    if(currentToday.getDate() < 10 && currentToday.getMonth()+1 < 10){
+        timeDay.textContent = `0${currentToday.getDate()}/0${currentToday.getMonth()+1}/${currentToday.getFullYear()}`
+    }
+    else if(currentToday.getDate() > 10 && currentToday.getMonth()+1 <10){
+        timeDay.textContent = `${currentToday.getDate()}/0${currentToday.getMonth()+1}/${currentToday.getFullYear()}`
+    }
+    else if(currentToday.getDate() < 10 && currentToday.getMonth()+1 > 10){
+        timeDay.textContent = `0${currentToday.getDate()}/${currentToday.getMonth()+1}/${currentToday.getFullYear()}`
+    }
+    else if(currentToday.getDate() > 10 && currentToday.getMonth()+1 > 10){
+        timeDay.textContent = `${currentToday.getDate()}/${currentToday.getMonth()+1}/${currentToday.getFullYear()}`
+    }
+    if(currentToday.getHours() < 10 && currentToday.getMinutes() < 10 && currentToday.getSeconds() < 10){
+        timeHour.textContent = `0${currentToday.getHours()}:0${currentToday.getMinutes()}:0${currentToday.getSeconds()}`
+      } 
+      else if(currentToday.getHours() < 10 && currentToday.getMinutes() < 10 && currentToday.getSeconds() > 10){
+        timeHour.textContent = `0${currentToday.getHours()}:0${currentToday.getMinutes()}:${currentToday.getSeconds()}`
+      }
+      else if(currentToday.getHours() < 10 && currentToday.getMinutes() > 10 && currentToday.getSeconds() < 10){
+        timeHour.textContent = `0${currentToday.getHours()}:${currentToday.getMinutes()}:0${currentToday.getSeconds()}`
+      }
+      else if(currentToday.getHours() < 10 && currentToday.getMinutes() > 10 && currentToday.getSeconds() > 10){
+        timeHour.textContent = `0${currentToday.getHours()}:${currentToday.getMinutes()}:${currentToday.getSeconds()}`
+      }
+      else if(currentToday.getHours() > 10 && currentToday.getMinutes() < 10 && currentToday.getSeconds() < 10){
+        timeHour.textContent = `${currentToday.getHours()}:0${currentToday.getMinutes()}:0${currentToday.getSeconds()}`
+      }
+      else if(currentToday.getHours() > 10 && currentToday.getMinutes() < 10 && currentToday.getSeconds() > 10){
+        timeHour.textContent = `${currentToday.getHours()}:0${currentToday.getMinutes()}:${currentToday.getSeconds()}`
+      }
+      else if(currentToday.getHours() > 10 && currentToday.getMinutes() > 10 && currentToday.getSeconds() < 10){
+        timeHour.textContent = `${currentToday.getHours()}:${currentToday.getMinutes()}:0${currentToday.getSeconds()}`
+      }
+      else if(currentToday.getHours() > 10 && currentToday.getMinutes() > 10 && currentToday.getSeconds() > 10){
+        timeHour.textContent = `${currentToday.getHours()}:${currentToday.getMinutes()}:${currentToday.getSeconds()}`
+      }
+}
+
+setTimeout(setInterval(timeATT,100), 1)
+
 window.onload(currentDate())
