@@ -17,6 +17,7 @@ body{
     padding: 10px;
     background-color: #b96e39;
     box-shadow: 0 0 20px 1px black;
+    border-radius: 10px;
 }
 .header{
     display: flex;
@@ -82,7 +83,9 @@ body{
     font-size: 3em;
     box-shadow: 0 0 20px 1px black;
     background-color: #A0522D;
+    border-radius: 10px;
 }
 .time span{
-    color: black;
+    color: wheat;
+    filter: drop-shadow(0 0 5px black);
 }

@@ -8,8 +8,8 @@ const currentDay = today.getDate()
 const currentMonth = today.getMonth()
 const currentYear = new Date().getFullYear()
 const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
-const timeDay = document.querySelector('.time span:nth-child(1)')
-const timeHour = document.querySelector('.time span:nth-child(2)')
+const timeDay = document.querySelector('.time span:nth-child(2)')
+const timeHour = document.querySelector('.time span:nth-child(3)')
 
 function currentDate() {
     let currentMonthNumber = new Date().getMonth()
