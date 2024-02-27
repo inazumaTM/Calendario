@@ -75,7 +75,7 @@ function currentDate() {
                 let newSpan = document.createElement('span')
                 newSpan.textContent = i
                 newSpan.classList.add('daysNumber', `n${i}`)
-                days.insertAdjacentElement("beforebegin", newSpan)
+                days.insertAdjacentElement("afterbegin", newSpan)
             }
             switch(dayOfWeek){
                 case 2: 
@@ -163,7 +163,7 @@ function currentDate() {
                     let newSpan = document.createElement('span')
                     newSpan.textContent = i
                     newSpan.classList.add('daysNumber', `n${i}`)
-                    days.insertAdjacentElement("beforebegin", newSpan)
+                    days.insertAdjacentElement("afterbegin", newSpan)
                 }
                 switch(dayOfWeek){
                     case 2: 
@@ -199,7 +199,7 @@ function currentDate() {
                     let newSpan = document.createElement('span')
                     newSpan.textContent = i
                     newSpan.classList.add('daysNumber', `n${i}`)
-                    days.insertAdjacentElement("beforebegin", newSpan)
+                    days.insertAdjacentElement("afterbegin", newSpan)
                 }
                 switch(dayOfWeek){
                     case 2: 
